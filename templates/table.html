@@ -1,0 +1,42 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+
+<body>
+    <h2>10 крупнейших госконтрактов, заключенных на прошлой неделе</h2>
+    <table style="width:100%">
+        <tr>
+            <th>Ссылка на контракт</th>
+            <th>Дата подписания</th>
+            <th>Номер контракта</th>
+            <th>Стоимость</th>
+            <th>Код региона</th>
+            <th>ИНН заказчика</th>
+            <th>Название заказчика</th>
+            <th>Поставщики</th>
+            <th>Предмет закупки</th>
+        </tr>
+        
+        {% for item in items %}
+        <tr>
+            
+            <td>{{ item['contract_url'] }}</td>
+            <td>{{ item['sign_date'] }}</td>
+            <td>{{ item['num_reg'] }}</td>
+            <td>{{ item['price'] }}</td>
+            <td>{{ item['region_code'] }}</td>
+            <td>{{ item['customer_inn'] }}</td>
+            <td>{{ item['customer_name'] }}</td>
+            <td>{{ item['suppliers_data'] }}</td>
+            <td>{{ item['subjects'] }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+    
+</body>
+
+</html>
